@@ -27,7 +27,7 @@ for (var i = 3; i < process.argv.length; i++) {
 
 // placeholder variable to make it easier for the console.log if movie-this isn't followed with input
 var nobodyText =
-	"\n If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947\n\nIt's on Netflix!\n";
+	"\n If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947\n\nIt's on Netflix!";
 
 
 function omdbCall(object) {
@@ -52,12 +52,11 @@ function omdbCall(object) {
 	})
 }
 
-
 function twitterCall() {
 	client.get('search/tweets', { q: 'jbs_twitbot' }, function (error, tweets, response) {
 		if (!error) {
 			console.log("\n-------------------")
-			console.log("\n Now searching Twitter user @jbs_twits ! \n")
+			console.log("\n Now searching Twitter user @jbs_twitbot ! \n]")
 			// console.log(tweets.statuses[1])
 			for (var i = 0; i < 19; i++) {
 				console.log("\n-------------------")
