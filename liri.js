@@ -27,12 +27,15 @@ for (var i = 3; i < process.argv.length; i++) {
 
 // placeholder variable to make it easier for the console.log if movie-this isn't followed with input
 var nobodyText =
-	"\n If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947\n\nIt's on Netflix!";
+	"\n If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947\nIt's on Netflix!";
 
-
+// function for doing the omdb call via request npm 
 function omdbCall(object) {
+	// request url is omdpapi w/ api key, passed object and then a callback function
 	request("http://www.omdbapi.com/?apikey=75c70b0&t=" + object, function (error, response, body) {
+		// erroer handling
 		if (!error && response.statusCode == 200) {
+			// easy variables
 			var body = JSON.parse(body);
 			var movieInfo = {
 				"Title": body.Title,
@@ -51,14 +54,13 @@ function omdbCall(object) {
 		console.log(error);
 	})
 }
-
+// API call via twitter npm to ask for 20 tweets at my handle with a callback function 
 function twitterCall() {
-	client.get('search/tweets', { q: 'jbs_twitbot' }, function (error, tweets, response) {
+	client.get('search/tweets', { q: 'jbs_twitbot', count: 20 }, function (error, tweets, response) {
 		if (!error) {
 			console.log("\n-------------------")
 			console.log("\n Now searching Twitter user @jbs_twitbot ! \n]")
-			// console.log(tweets.statuses[1])
-			for (var i = 0; i < 19; i++) {
+			for (var i = 0; i < 20; i++) {
 				console.log("\n-------------------")
 				console.log("\nTweet #" + (i + 1))
 				console.log("\n" + tweets.statuses[i].text)
@@ -69,9 +71,9 @@ function twitterCall() {
 		console.log("There was an error, please try again!")
 	})
 };
-
+// spotify api call function with a passed object.  Limiting to 1 for speed's sake
 function spotifyCall(object) {
-	spotify.search({ type: 'track', query: object }, function (err, data) {
+	spotify.search({ type: 'track', query: object, limit: 1 }, function (err, data) {
 		if (err) {
 			return console.log("There was an error of " + err)
 		}
@@ -112,7 +114,7 @@ function doWhat() {
 		}
 	})
 }
-// switch case that determines what we do based off argv2
+// switch case that determines what we do based off argv2 in the master function
 switch (uProcess) {
 	case "my-tweets":
 		return twitterCall();
@@ -124,8 +126,8 @@ switch (uProcess) {
 			return spotifyCall(input);
 		}
 		// otherwise we do the default Ace of Bass
-		console.log("\n You didn't specify anything so here is 'I Saw the Sign' by Ace of Bass")
-		spotifyCall("I Saw the Sign")
+		console.log("\n You didn't specify anything so here is 'I Saw the Sign' by Ace of Bass");
+		return spotifyCall("The Sign Ace of Base")
 		break;
 	case "movie-this":
 		// if there was any input after the movie-this we will search for it
