@@ -12,7 +12,7 @@ Enter one of the three basic commands to run queries via the Twitter API, Spotif
 1. spotify-this-song
 
 Screenshot of entry method:
-(/screenshots/Spotify-Example.png?raw=true)
+(./screenshots/Spotify-Example.png?raw=true)
 Screenshot of result:
 (/screenshots/Spotify-Finished)
 
