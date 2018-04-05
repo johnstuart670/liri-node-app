@@ -12,26 +12,24 @@ Enter one of the three basic commands to run queries via the Twitter API, Spotif
 1. spotify-this-song
 
 Screenshot of entry method:
-!(./screenshots/Spotify-Example.png?raw=true)
+![entry](./screenshots/Spotify-Example.png?raw=true)
 Screenshot of result:
-(/screenshots/Spotify-Finished)
-
+![result](./screenshots/Spotify-Finished.png?raw=true)
 
 2. movie-this
 
 Screenshot of entry method:
-(/screenshots/Movie-Example)
-
+![entry](./screenshots/Movie-Example.png?raw=true)
 Screenshot of result:
-(/screenshots/Movie-Finished)
+![result](./screenshots/Movie-Finished.png?raw=true)
 
 
 3. my-tweets
 
 Screenshot of entry method:
-(/screenshots/Tweet-Example)
-
+![entry](./screenshots/Tweet-Example.png?raw=true)
 Screenshot of result:
-(/screenshots/Tweet-Finished)
+![result](./screenshots/Tweet-Finished.png?raw=true)
+
 
 There is a bonus "do-what-it-says" that pulls the information from random.txt and runs a call as defined.
