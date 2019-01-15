@@ -62,9 +62,9 @@ function twitterCall() {
 			console.log("\n Now searching Twitter user @jbs_twitbot ! \n]")
 			for (var i = 0; i < 20; i++) {
 				console.log("\n-------------------")
-				console.log("\nTweet #" + (i + 1))
-				console.log("\n" + tweets.statuses[i].text)
-				console.log("\nTime Tweet Created:" + tweets.statuses[i].created_at)
+				console.log("Tweet #" + (i + 1))
+				console.log(tweets.statuses[i].text)
+				console.log("Time Tweet Created:" + tweets.statuses[i].created_at)
 			}
 			return console.log("Twitter Feed complete!")
 		}
